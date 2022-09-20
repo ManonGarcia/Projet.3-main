@@ -1,0 +1,1121 @@
+@import "./Utils/variables";
+@import "./Utils/fonctions";
+@import "./Utils/mixins";
+@import "./Utils/placeholders";
+
+@font-face {
+    font-family: 'Shrikhand';
+    src: url('../Shrikhand-Regular.ttf') format('truetype'),
+        url('../Shrikhand-Regular.eot') format('eot'),
+        url('../Shrikhand-Regular.woff') format('woff'),
+        url('../Shrikhand-Regular.svg') format('svg');
+}
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+        & h2 {
+            font-family: 'Shrikhand', sans-serif;
+        }
+}
+
+.loading {
+    position: fixed;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    height: 100vh;
+    inset: 0;
+    z-index: 2;
+    animation: animation-loader 2s forwards;
+    overflow: hidden;
+
+    .progress_clock {
+        position: relative;
+        width: 140.8px;
+        height: 140.8px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        background: $color-tertiary;
+        z-index: 2;
+        animation: animation-opacity 2s forwards;
+     }
+     
+     .progress_clock:before {
+        content:  "";
+        position: absolute;
+        top: 10px;
+        width: 100%; 
+        height: 45%;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAADq0lEQVR4nO3cT2gcZRzG8e9vkm1K0V4EFamixqWVHPSgKIUeehBqoQeRevFYUG8e1CaRCgsibXIpUkkhVPGm4MVDVForiHjwz9WWbpJDtREFUTS9mG12Xi8qMubfbnfyvDPv73McduBhvzC7y86uEZkwsXgIy2eAnVj4hpB9Tlj90E49eFW9rQymHlAUJue/B+4pHga+wpjlur1nZ5orgmmliDFA2OQRP0M2xUhnxlpjne1ZVZ5MPaB3dieE06w0LoeJxUPqNTerggH+NYrlH4fJ9rnQunSLeky/qhwAwMCOsdL4Nky296nH9KPqAf6xD+zLMNF+VD2kV3UJAHAbZhfDZPuAekgv6hQAYDfYXBhvP6QeslV1CwCwm8zmwsuLt6uHbEUdAwDsodF9PxwNQ+ohm6lrAMAO8sD8i+oVm6lxAAB7PZy4cp96xUZqHoBddO2UesRG6h4AsKPh1fmH1SvWk0AAjMC4esR6UggA8HQ4fuUu9Yi1pBKgwXD2rHrEWlIJAIGn1BPWkk4AeCzGT8cpBchodPerRxSlFADMHldPKEorQLC96glFaQUg3K9eUJRYAO5QDyhKLUB0X96nFmCXekBRagGiuxEttQDR8QBiHkDMA4h5ADEPIOYBxDyAmAcQ8wBiHkDMA4h5ADEPIOYBxDyAmAcQ8wBiHkAstQC5ekBRagF+Vw8oSiuA8Z16QlFaAQKfqicUpRTgT7r2rnpEUToBzE7bdHNJPaMojQDGF+zotNQz1pJCgPPssCOx/r/csHpAif7AeI2F5ox9YF31mPXUNcDX5EPP2NToD+ohm6ljgCWwIzY1+ot6yFbU7zXAmLaTzUo8+VDHAFk+p57Qi/oFGP7pmnpCL2oXwFoHV9UbelG7AFXjAcQ8gJgHEPMAYh5AzAOIeQAxDyDmAcQ8gJgHEPMAYh5AzAOIeQAxDyDmAcQ8gJgHEPMAYh5ArDoBAh+RhT107W6CfaKeMyjVCZDbC/bG3h9turnEkD2vnjMo1QlQU9W5OzpjNhxfeI6GGXl3NsK/ge5LjAGuA7f+76iFJxniGnlggyd/ucRdpYjxEnQzN9dG/4OMohgDXOj7zGDnB7hjW8QXILdzQD+/6epivDPoOWWLLoBNNS+Bne35xMBbdrJ5uYRJpYouAAAjnZeAz3o44yK/Lb9S1pwyRRnAWmMdRm4cBs6w8eVolcCb/Lp82GYfubFN8wYq+jfTYXxhDMuPYfYEcO/fh6+CXQDeruJl57/+At+BtMV6qFKbAAAAAElFTkSuQmCC) no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform-origin: bottom;
+        animation: progress-t59zy9 1.2s linear infinite;
+     }
+     
+     .progress_clock:after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        width: 100%; 
+        height: 31%; 
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAABmJLR0QA/wD/AP+gvaeTAAAEUUlEQVR4nO2bz2scZRjHP887u5tNbbPVNJEUC/5orCLVk4L2LxDEX7ApCkJBbRGsSEEE8bAXTx4E0wg9FTx2xUOKPy5ee1JBsUJrokasAYlFrUnT7M48HrKTnd2dzNbDvA9k/J7m/RHm+37meZ6Z2bwDBjp77KfqbH3xcNx+79mfp2ZnFo7E7bmjl+9/94VvbvHty/k+IcC1tegZRJ+O20Gp/YQqb8RtjeTxkRu7j/r2ZQJDRB/r6VD2CjKa7HJER/AsExgodyWb4qiBjvZOkTv9mrKCAVN97RrQAwPR/d7cdGQFo2ehmgZDpR9Y7vIO41xdA2Ai2SdKDdcHA2pz9Yu7/TkzgPFHe3EcCHo6lTGUXf1zI4KJ/r485R1GVGJsoFNkL/1pAgSlyh4fnmJ5h6FOB2Gk1QwgDKOdDSOKSFlgVAMqnXrSlaREUY7yDsM5lwJDxgCWqt9We3pVd3ZkgG7eIYRJgA+eX7oVKAGUVmtjACpyO4BqWhTlp5LPkwFEyh4BUF46PbPwZxi2JrfMlNuN2ZnF30BfBZDUKMpP3mHAVh2oKryNJkaU4yQ6dKeniVP5L6/mO/uhC6J/bnqq8neORgbk/zlD3NLNzhX0lzy99Ms7jJZWPgWuDJunsFLGzXuwtCXvME41D1yXVushhHcErqVMaYOeDV3w8InmPX/59CY+T9av9+s/PiISXSD54qb61MnmtNeIiGUKA2B2ZuEC8Gin+d3JcwcPZ83PU1Y/7nSlLHcP+dXSij0MtBIfORixdGIOI34PAVBlMmtu3jKHIdCFId1jC5nDgG40CIyfOf5l2cqIKYwz9cUakPwNQ9ZW9u2z8mMKo+UG06ISbJiliimMKFE8Y4VOzIqobc0IwwEYLrIroqYwXMrdQ1OixZdMYSipCy8mDFIjo6AwNKU+SFTQNJG0KJComDBIrRlFvbWS+mI20WioiS8zGJt7LzTt3walqUuXb/NuCEMYEpW3TYfWhjOpG2Yw2q60/QtZoOMerWzJDEZAtG0qKK5YaRI62f7qa8EiI3PBkgEqR9nBkMyrXzAY6v6PjFhCRmSoFquAkgWDwkWGbH/1i3Y30SwYQrHSRMncr+V1L1csyzQZ2BGcUNZYbrIsoNWMwaBRv1jJGM9FJjA6Cw2y5tRauwa+MshbJjCmqA5PA5eZRrnIBEYbN3ShQblVjMiIuDEUhmYX2Fxk8ymnKw/ddhAkdvT4kgmMsmtfHTYnjNyKDy9JmcBYPnTvVSDMmlNdHy0GjEZDIiCOjk9KGt6hqg8AC5tdsnri/P41377sHsc7Wx5V+eiV5qErrzWnvxf4ojO6nPW3ecniexMAnONrVR4Ux1un6z+ECGMKzwEgfGXhyQyGRnyOcAxlWkU+TI6J8pmFJ7M0aTEyT/rXBb+vrrc/9u0HDGGcah64DvoisJ7o3kD15Tfn70v72iB3mW+kn6svHFT0SRVxobrzrzfvvmTl5V/9YhvRZx1nGgAAAABJRU5ErkJggg==) no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform-origin: bottom;
+        animation: progress-t59zy9 7.2s linear infinite;
+     }
+     
+     @keyframes progress-t59zy9 {
+        0% {
+           transform: rotate(0deg);
+        }
+     
+        100% {
+           transform: rotate(360deg);
+        }
+     }
+}
+
+
+@keyframes animation-loader {
+    0%, 99% {
+        opacity: .9;
+        z-index: 2;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes animation-opacity {
+    0%, 90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+
+    }
+}
+
+
+
+header {
+    & .header_shadow {
+        position: relative;
+        box-shadow: 0px 5px 6px 0px rgb(0 0 0 / 20%);
+    }
+    #logo {
+        display: flex;
+        align-items: center;
+        padding: 2%;
+        margin: 0;
+        & .fa-arrow-left {
+            font-size: x-large;
+            color: black;
+        }
+    }
+    & img {
+        width: 20%;
+        margin: auto;
+    }
+}
+
+.formulaire {
+    @include flexCenter;
+    background-color: $color-formular;
+    justify-content: center;
+        .icone_formulaire {
+            padding: 2%;
+        }
+        .saisie_formulaire {
+            width: 10%;
+        }
+            & input {
+                border: none;
+                background-color: $color-formular;
+            }
+}
+
+.recherche_Restaurants {
+    text-align: center;
+    background-color: $color-background;
+    padding: 3%;
+        .texte_recherche {
+            & h3 {
+                margin-top: 0;
+            }
+        }
+
+        .bouton_validation {
+            & input {
+                background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
+                border:none;
+                color: white;
+                border-radius: 30px;
+                padding: 1.5%;
+                min-width: 20%;
+                -webkit-box-shadow: 0px 5px 27px -2px rgba(0,0,0,0.40); 
+                box-shadow: 0px 5px 27px -2px rgba(0,0,0,0.40);   
+                    &:hover {
+                        @include color-linear-hover;
+                    }
+            }
+        }
+}
+
+#display {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#Fonctionnement {
+    margin: 8% 0;
+    width: 30%;
+        & h3 {
+            margin-left: 5%;
+        }
+        & span {
+            font-size: larger;
+        }
+    
+
+    .block_Etapes {
+        @include flexCenter;
+        width: 70%;
+        margin: 8% 5% 10% 8%;
+        padding: 5% 0% 5% 0;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        box-shadow: 0 3px 10px 0 #dbdbdb;
+        background-color: $color-background;
+            & p {
+                margin: 0;
+            }
+            &:hover {
+                background-color: lighten($color: $color-primary, $amount: 35%);
+                .icone_hover {
+                    color: $color-primary;
+                }
+            }
+
+
+                .chiffre_etape {
+                    background-color: $color-primary;
+                    color: $color-text;
+                    border-radius: 15px;
+                    padding: 1% 2.5%;
+                    margin-left: -3.5%;
+                    margin-right: 6%;
+                }
+                    .duo_etape {
+                        @include spaceBetween;
+                            .icone_etape {
+                                color: grey;
+                            }
+                    }
+                                .etape_1 {
+                                    width: 66%;
+                                }
+                                .etape_2 {
+                                    width: 62%;
+                                }
+                                .etape_3 {
+                                    width: 64%;
+                                }
+                                    
+    }
+}
+
+#Choix_restaurants {
+    background-color: $color-background;
+    padding: 1% 3%;
+    width: 55%;
+    margin: 5% 0;
+    border-radius: 25px;
+
+        .Nouveau1 {
+            background-color: $color-tertiary;
+            padding: 1%;
+            width: 8%;
+            position: absolute;
+            content: '';
+            z-index: 1;
+            right: 28.2em;
+            top: 1em;
+            text-align: center;
+            color: darken($color: $color-tertiary, $amount: 40%);  
+        }
+        .Nouveau2 {
+            background-color: $color-tertiary;
+            padding: 1%;
+            width: 8%;
+            position: absolute;
+            content: '';
+            z-index: 1;
+            right: 1em;
+            top: 1em;
+            text-align: center;
+            color: darken($color: $color-tertiary, $amount: 40%);
+        }
+
+    .block_Restaurant {
+        @include blockRestaurants;
+        width: 48%;
+        box-shadow: 1px 0px 10px 4px #aeaeae;
+            & a {
+                text-decoration: none;
+                color: black;
+            }
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+    img {
+        @include images;
+    }
+                
+    .legende_Restaurant {
+        @include legendeRestaurant;
+            & h4 {
+                margin-top: 5%;
+                margin-bottom: 4%;
+            }
+            & p {
+                margin-top: 0;
+            }
+            & span {
+                font-size: x-large;
+            }
+    }
+
+    .flex_blocks {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    @keyframes checkHeart {
+        0% {
+            background-position: 0% 0%;
+        }
+        25% {
+            background-position: 0% 25%;
+        }
+        50% {
+            background-position: 0% 50%;
+        }
+        75% {
+            background-position: 0% 75%;
+        }
+        100% {
+            background-position: 0% 100%;
+        }
+    
+    }
+    
+    input[type=checkbox] {
+        display: none;
+    }
+    
+    input[type=checkbox]:checked + .label {
+        font-weight: 900;
+        background: linear-gradient(to bottom, white 0%, $color-secondary 50%, $color-primary 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-position: 0% 100%;
+        background-size: 200% 200%;
+        -webkit-text-fill-color: transparent;
+        animation: checkHeart .3s ease-in;
+        font-size: x-large;
+    }
+
+    input[type=checkbox]:hover + .label {
+        font-weight: 900;
+        background: linear-gradient(to bottom, white 0%, $color-secondary 50%, $color-primary 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-position: 0% 100%;
+        background-size: 200% 200%;
+        -webkit-text-fill-color: transparent;
+        animation: checkHeart .3s ease-in;
+        font-size: x-large;
+        cursor: pointer;
+    }
+}
+
+footer {
+    background-color: #2f2f2f;
+    color: white;
+    padding: 1% 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+        & a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                font-style: italic;
+                border-bottom: 2px solid transparent;
+                border-image: linear-gradient(270deg, $color-primary 0%, $color-secondary 100%);
+                border-image-slice: 1;
+            }
+        }
+        & h4 {
+            font-size: large;
+            font-style: italic;
+        }
+
+    .flex_footer {
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .duo_footer {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    & span {
+        font-size: small;
+    }
+
+    .fa-utensils {
+        margin-right: 4%;
+    }
+    
+    .fa-handshake-angle {
+        margin-right: 3%;
+    }
+}
+
+        /*RESTAURANT*/
+
+    .img_restaurant1 {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    #section_menu {
+        background-color: $color-background;
+        border-radius: 40px;
+        padding: 2% 3% 4% 3%;
+        position: relative;
+        width: 70%;
+        margin: auto;
+        margin-top: -8%;
+        margin-bottom: -3%;
+        box-shadow: 0px 0px 16px 4px #dbdbdb;
+            
+        .nom_restaurant {
+            @include flexCenter;
+            justify-content: space-between;
+                & span {
+                    font-size: x-large;
+                }
+                input[type=checkbox] {
+                    display: none;
+                }
+                
+                input[type=checkbox]:checked + .label {
+                    font-weight: 900;
+                    background: linear-gradient(to bottom, white 0%, $color-secondary 50%, $color-primary 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    background-position: 0% 100%;
+                    background-size: 200% 200%;
+                    -webkit-text-fill-color: transparent;
+                    animation: checkHeart .3s ease-in;
+                    font-size: x-large;
+                }
+                input[type=checkbox]:hover + .label {
+                    font-weight: 900;
+                    background: linear-gradient(to bottom, white 0%, $color-secondary 50%, $color-primary 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    background-position: 0% 100%;
+                    background-size: 200% 200%;
+                    -webkit-text-fill-color: transparent;
+                    animation: checkHeart .3s ease-in;
+                    font-size: x-large;
+                    cursor: pointer;
+                }
+        }
+
+        .flex_repas {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+            & h3 {
+                margin: 0;
+            }
+            & hr {
+                background-color: $color-tertiary;
+                border: none;
+                margin: 1% 0 5% 0;
+                height: 3px;
+                width: 15%;
+            }
+        .flex_enchante {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        .block_choix {
+            @include blocksMenu1;
+
+            .texte_legende {
+                max-width: 260px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .description_menu {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .entrees_menu, .plats_menu, .desserts_menu {
+            width: 30%;
+        }
+                            
+        .bouton_validation {
+            text-align: center;
+            width: 50%;
+            margin: auto;
+            margin-top: 5%;
+                & input {
+                    @include buttonInput;
+                    &:hover {
+                        @include color-linear-hover;
+                    }
+                }
+        }
+
+            @keyframes movechoice {
+                from {
+                    width: 100%
+                }
+                to {
+                    width: 75%
+                }
+            }
+            @keyframes moveicon {
+                from {
+                    width: 0%;
+                }
+                to {
+                    width: 20%;
+                }
+            }
+            @keyframes removeicon {
+                from {
+                    width: 20%;
+                }
+                to {
+                    width: 0%
+                }
+            }
+
+            @keyframes removechoice {
+                from {
+                    width: 75%;
+                }
+                to {
+                    width: 100%; 
+                }
+            }
+
+        
+            @keyframes rotateicon {
+                0% {
+                    transform: rotate(-90deg);
+                }
+                25% {
+                    transform: rotate(180deg);
+                }
+                75% {
+                    transform: rotate(90);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+
+
+        .choix_plats {
+            
+            input[type=checkbox]:not(:indeterminate):checked ~ .icon {
+                animation: moveicon .3s ease-in-out;
+                width: 20%;
+                z-index: 1;
+            }
+            input[type=checkbox]:not(:indeterminate):checked + .block_choix {
+                animation: movechoice .3s ease-in-out;
+                width: 75%;
+            }
+            input[type=checkbox]:not(:indeterminate):hover ~ .icon {
+                animation: moveicon .3s ease-in-out;
+                width: 20%;
+                z-index: 1;
+            }
+            input[type=checkbox]:not(:indeterminate):hover + .block_choix {
+                animation: movechoice .3s ease-in-out;
+                width: 75%;
+            }
+            input[type=checkbox]:not(:checked) ~ .icon {
+                animation: removeicon .3s ease-in-out;
+                width: 0;
+            }
+            input[type=checkbox]:not(:checked) ~ .block_choix {
+                animation: removechoice .3s ease-in-out;
+                width: 100%;
+            }
+                            
+
+            label{
+                display: flex;
+                margin-bottom: 5%;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0px 0px 20px 0px #d3d3d3;
+                    & input {
+                        display: none;
+                    }
+                    &:hover span {
+                        animation: rotateicon .5s both;
+                    }
+            }
+                .block_choix{
+                    width:100%;
+                }
+                .icon{
+                    width: 0;
+                    font-size: x-large;
+                    background-color: $color-tertiary;
+                    display: flex;
+                    align-items: center;
+                    z-index: -1;
+                                                                    
+                    .fa-circle-check{
+                        color: white;
+                        font-weight: 900;
+                        font-size: larger;
+                        margin: 0 auto;
+                        vertical-align: middle;
+                    }
+                }
+        }
+    }
+
+    
+    .choix1_plat {
+        animation: apparition 1.5s .1s both;
+    }
+    .choix2_plat {
+        animation: apparition 1.5s .3s both;
+    }
+    .choix3_plat {
+        animation: apparition 1.5s .5s both;
+    }
+
+    @keyframes apparition {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    #footerR {
+        @include footer;
+        padding: 5% 6% 1% 6%;
+    }
+
+
+
+
+
+        /*RESPONSIVE TELEPHONE*/
+
+@media screen and (max-width: 760px) {
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+            & h2 {
+                font-family: 'Shrikhand', sans-serif;
+            }
+    }
+
+    header {
+        .img_logo {
+        display: block;
+        width: 60%;
+        margin: auto;
+    }
+    }
+
+    
+
+    .formulaire {
+        @include flexCenter;
+        background-color: $color-formular;
+        justify-content: center;
+            .icone_formulaire {
+                padding: 5%;
+            }
+            .saisie_formulaire {
+                width: 40%;
+            }
+                & input {
+                    border: none;
+                    background-color: $color-formular;
+                }
+    }
+    
+    .recherche_Restaurants {
+        text-align: center;
+        background-color: $color-background;
+        padding: 10%;
+            .texte_recherche {
+                & h3 {
+                    margin-top: 0;
+                }
+            }
+                    .bouton_validation {
+                        & input {
+                            @include buttonInput;    
+                                &:active {
+                                    @include color-linear-hover;
+                                }
+                        }
+                    }
+    }
+
+
+    #display {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Fonctionnement {
+        margin: 15% 0;
+        width: 100%;
+       & h3 {
+        margin-left: 5%;
+       } 
+        .block_Etapes {
+            @include flexCenter;
+            margin: 5% 2% 5% 8%;
+            padding: 6% 0% 6% 0;
+            width: 84%;
+            background-color: $color-background;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px 0 #dbdbdb;
+                & p {
+                    margin: 0;
+                }
+
+                    .chiffre_etape {
+                        background-color: $color-primary;
+                        color: $color-text;
+                        border-radius: 15px;
+                        padding: 1% 2.5%;
+                        margin-left: -3.5%;
+                        margin-right: 6%;
+                    }
+                        .duo_etape {
+                            @include spaceBetween;
+                                .icone_etape {
+                                    color: grey;
+                                }
+                        }
+                                    .etape_1 {
+                                        width: 68%;
+                                    }
+                                    .etape_2 {
+                                        width: 64%;
+                                    }
+                                    .etape_3 {
+                                        width: 66%;
+                                    }
+                                        
+        }
+    }
+
+
+    #Choix_restaurants {
+        background-color: $color-background;
+        padding: 10% 5%;
+        width: 90%;
+        border-radius: 0;
+        margin: 0;
+
+        .Nouveau1 {
+            @include nouveau1;
+            top: 1em;
+            right: 1em;
+        }
+            .Nouveau2 {
+                @include nouveau2;
+                top: 15.5em;
+                right: 1em;
+            }
+            .block_Restaurant {
+                @include blockRestaurants;
+                width: 100%;
+                & a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+
+            .flex_blocks {
+                display: flex;
+                flex-direction: column;
+            }
+                img {
+                    @include images;
+                }
+                    .legende_Restaurant {
+                        @include legendeRestaurant;
+                        & h4 {
+                            margin-top: 5%;
+                            margin-bottom: 4%;
+                        }
+                        & p {
+                            margin-top: 0;
+                        }
+                    }
+    }
+
+    @keyframes checkHeart {
+        0% {
+            background-position: 0% 0%;
+        }
+        25% {
+            background-position: 0% 25%;
+        }
+        50% {
+            background-position: 0% 50%;
+        }
+        75% {
+            background-position: 0% 75%;
+        }
+        100% {
+            background-position: 0% 100%;
+        }
+    
+      }
+    
+      input[type=checkbox] {
+        display: none;
+      }
+    
+      input[type=checkbox]:checked + .label {
+        font-weight: 900;
+        background: linear-gradient(to bottom, white 0%, $color-secondary 50%, $color-primary 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-position: 0% 100%;
+        background-size: 200% 200%;
+        -webkit-text-fill-color: transparent;
+        animation: checkHeart .3s ease-in;
+        font-size: 20px;
+      }
+
+
+
+
+
+    footer {
+        @include footer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+            & .flex_footer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            & p {
+                margin: 0 0 5% 0;
+            }
+            & .duo_footer {
+                margin: 0 0 3% 0;
+                    & span {
+                        margin: 0 5% 3% 0;
+                    }
+            }
+    }
+
+        /*Carte Restaurants*/
+
+    header {
+        #logo {
+            @include headerMenu;
+        }
+            .fa-arrow-left {
+                font-size: x-large;
+                color: black;
+            }
+    }
+
+
+    .img_restaurant1 {
+        width: 100%;
+        height: 250px;
+    }
+
+    #section_menu {
+        background-color: $color-background;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 5%;
+        position: relative;
+        width: 90%;
+        margin-top: -10%;
+        box-shadow: none;
+            
+        .nom_restaurant {
+            @include flexCenter;
+            justify-content: space-between;
+                & span {
+                    font-size: x-large;
+                }
+        }
+
+        .flex_repas {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex_enchante {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & h3 {
+            margin-bottom: 0;
+        }
+
+        & hr {
+            background-color: $color-tertiary;
+            border: none;
+            margin: 1% 0 5% 0;
+            height: 3px;
+            width: 15%;
+        }
+                    .description_menu {
+                        @include flexCenter;
+                        justify-content: space-between;
+                    }
+                        .block_choix {
+                            @include blocksMenu1;
+                                .texte_legende {
+                                    max-width: 260px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                }
+                        }
+                            .entrees_menu, .plats_menu, .desserts_menu {
+                                width: 100%;
+                                margin-bottom: 10%;
+                            }
+                            .bouton_validation {
+                                text-align: center;
+                                margin-bottom: 20%;
+                                & input {
+                                    @include buttonInput;
+                                    min-width: 100%;
+                                    padding: 12%;
+                                }
+                            }
+
+                            @keyframes movechoice {
+                                from {
+                                    width: 100%
+                                }
+                                to {
+                                    width: 80%
+                                }
+                            }
+                            @keyframes moveicon {
+                                from {
+                                    width: 0%;
+                                }
+                                to {
+                                    width: 20%;
+                                }
+                            }
+                            @keyframes removeicon {
+                                from {
+                                    width: 20%
+                                }
+                                to {
+                                    width: 0%
+                                }
+                            }
+                        
+                            .choix_plats {
+                                input[type=checkbox]:not(:indeterminate):checked ~ .icon {
+                                    animation: moveicon .3s ease-in-out;
+                                    width: 20%;
+                                }
+                                input[type=checkbox]:not(:indeterminate):checked + .block_choix {
+                                    animation: movechoice .3s ease-in-out;
+                                    width: 80%;
+                                }
+                                input[type=checkbox]:not(:checked) ~ .icon {
+                                    animation: removeicon .2s ease-in-out;
+                                    width: 0;
+                                }
+
+                                label{
+                                    display: flex;
+                                    margin-bottom: 5%;
+                                    border-radius: 15px;
+                                    overflow: hidden;
+                                    
+                                    .block_choix{
+                                        width:100%;
+                                    }
+                                    .icon{
+                                        width: 0;
+                                        background-color: $color-tertiary;
+                                        display: flex;
+                                        align-items: center;
+                                        .fa-circle-check{
+                                            color: white;
+                                            font-weight: 900;
+                                            margin: 0 auto;
+                                            vertical-align: middle;
+                                        }
+                                    }
+                                }
+                            }
+    }
+
+    .choix1_entree {
+        animation: apparition-Entrees 2s .3s;
+    }
+    .choix2_entree {
+        animation: apparition-Entrees 2s .4s;
+    }
+    .choix3_entree {
+        animation: apparition-Entrees 2s .5s;
+    }
+    
+
+    @keyframes apparition-Entrees {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    #footerR {
+        @include footer;
+        width: 90%;
+    }
+}
+
+
+        /****  RESPONSIVE TABLETTE  ****/
+
+@media screen and (min-width: 760px) and (max-width: 900px) {
+    .img_restaurant1 {
+        height: 200px;
+    }
+    #display {
+        display: flex;
+        flex-direction: column;
+
+        #Fonctionnement {
+            width: 100%;
+            margin: 6% 0;
+    
+            .ensemble_etapes {
+                display: flex;
+                width: 95%;
+                margin-left: 2%;
+            }
+
+        .block_Etapes {
+            margin: 4% 2% 4% 2%;
+            padding: 2% 0% 2% 0;
+        }
+            .chiffre_etape {
+                padding: 1% 3%;
+                margin-left: -4.5%;
+            }
+            .etape_1 {
+                width: 85%;
+            }
+            .etape_2 {
+                width: 82%;
+            }
+            .etape_3 {
+                width: 84%;
+            }
+        }
+
+        #Choix_restaurants {
+            width: 94%;
+            margin: 0;
+            border-radius: 0;
+            padding: 5% 3%;
+            
+                .Nouveau1 {
+                    right: 27em;
+                }
+        }
+    }
+
+    #section_menu {
+        border-radius: 0;
+        margin: 0;
+        width: 94%;
+            .entrees_menu, .plats_menu, .desserts_menu {
+                width: 32%;
+            }
+            
+        .block_choix {
+            .texte_legende {
+                max-width: 214px;
+            }
+        }
+    }
+
+    footer {
+        padding: 1% 1%;
+        justify-content: space-around;
+    }
+    #footerR {
+        padding: 2% 5% 2% 5%;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

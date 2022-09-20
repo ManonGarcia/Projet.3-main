@@ -1,0 +1,123 @@
+@mixin color-linear {
+    background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
+}
+@mixin color-linear-hover {
+    background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
+    opacity: .8;
+    box-shadow: 0px 2px 12px 4px rgb(0 0 0 / 40%);
+    transform: scale(1.03);
+}
+
+@mixin images {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin spaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin buttonInput {
+    background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
+    border:none;
+    color: white;
+    border-radius: 30px;
+    padding: 5%;
+    min-width: 60%;
+    -webkit-box-shadow: 0px 5px 27px -2px rgba(0,0,0,0.40); 
+    box-shadow: 0px 5px 27px -2px rgba(0,0,0,0.40);
+}
+
+@mixin blockRestaurants {
+    background-color: $color-text;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+
+
+@mixin iconHeart {
+    font-size: x-large;
+    margin: 5% 3%;
+}
+
+@mixin legendeRestaurant {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 5%;
+}
+
+@mixin footer {
+    background-color: #2f2f2f;
+    color: white;
+    padding: 1% 5%;
+        & a {
+            color: white;
+            text-decoration: none;
+        }
+
+                .duo_footer {
+                    display: flex;
+                    align-items: center;
+                }
+                    & span {
+                        font-size: small;
+                    }
+                        .fa-utensils {
+                            margin-right: 4%;
+                        }
+                        .fa-handshake-angle {
+                            margin-right: 3%;
+                        }
+}
+
+@mixin headerMenu {
+    display: flex;
+    align-items: center;
+    padding: 6%;
+}
+
+@mixin blocksMenu1 {
+    background-color: $color-text;
+    padding: 3%;
+        & h4, p {
+            margin: 1%;
+        }
+}
+
+@mixin nouveau1 {
+        background-color: $color-tertiary;
+        padding: 2%;
+        width: 18%;
+        position: absolute;
+        text-align: center;
+        color: darken($color: $color-tertiary, $amount: 40%);   
+}
+
+@mixin nouveau2 {
+    background-color: $color-tertiary;
+    padding: 2%;
+    width: 18%;
+    position: absolute;
+    text-align: center;
+    color: darken($color: $color-tertiary, $amount: 40%);
+}
+
+
+
+
+    /* -------LOADING------- */
+
+@mixin loading_clock {
+       
+    
+}

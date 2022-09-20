@@ -1,0 +1,11 @@
+{
+  "name": "Projet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./repoP3/P3/sass/main.scss:./repoP3/P3/css/food.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="../P3/css/food.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/033723977e.js" crossorigin="anonymous"></script>
+        <title>OhMyFood</title>
+    </head>
+
+    <Body>
+        <div class="loading">
+            <div class="progress_clock">
+            </div>
+        </div>
+
+        <header>
+
+            <div class="header_shadow">
+            <figure id="logo">
+                <img src="./images/ohmyfood.png" alt="logo" class="img_logo">
+            </figure>
+            </div>
+        </header>
+
+        <main>
+            <section id="Recherche_restaurant">
+                <form action="traitement.php" method="post">
+                    <div class="formulaire">
+                        <div class="icone_formulaire">
+                            <span class="fa-solid fa-location-dot"></span>
+                        </div>
+                        <div class="saisie_formulaire">
+                            <input type="text" name="#" value="Paris, Belleville">
+                        </div>
+                    </div>
+                </form>
+                <div class="recherche_Restaurants">
+                    <div class="texte_recherche">
+                        <h3>Réservez le menu qui <br>
+                            vous convient</h3>
+                        <p>Découvrez des restaurants d'exception, <br>
+                            sélectionnés par nos soins.</p>
+                    </div>
+                    <div class="bouton_validation">
+                        <a href="#Choix_restaurants">
+                        <input type="submit" value="Explorer nos restaurants"/></a>
+                    </div>
+                </div>
+            </section>
+            <section id="display">
+                <section id="Fonctionnement">
+                    <h3>Fonctionnement</h3>
+                    <div class="ensemble_etapes">
+                        <div class="block_Etapes">
+                            <div class="chiffre_etape">
+                                <p>1</p>
+                            </div>
+                            <div class="duo_etape etape_1">
+                                <div class="icone_etape">
+                                    <span class="fa-solid fa-mobile-screen-button icone_hover"></span>
+                                </div>
+                                <div class="texte_etape">
+                                    <p>Choisissez un restaurant</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block_Etapes">
+                            <div class="chiffre_etape">
+                                <p>2</p>
+                            </div>
+                            <div class="duo_etape etape_2">
+                                <div class="icone_etape">
+                                    <span class="fa-solid fa-list-ul icone_hover"></span>
+                                </div>
+                                <div class="texte_etape">
+                                    <p>Composez votre menu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block_Etapes etape_degustez">
+                            <div class="chiffre_etape">
+                                <p>3</p>
+                            </div>
+                            <div class="duo_etape etape_3">
+                                <div class="icone_etape">
+                                    <span class="fa-solid fa-store icone_hover"></span>
+                                </div>
+                                <div class="texte_etape">
+                                    <p>Dégustez au restaurant</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="Choix_restaurants">
+                    <h3>Restaurants</h3>
+                    <div class="flex_blocks">
+                        <div class="Nouveau1">Nouveau</div>
+                        <div class="choix1 block_Restaurant">
+                            <a href="menu1.html">
+                            <div class="images">
+                                <img src="./images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant1">
+                            </div>
+                            <div class="legende_Restaurant">
+                                <div>
+                                    <h4>La palette du goût</h4>
+                                    <p>Ménilmontant</p>
+                                </div>
+                                <div></a>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="label fa-regular fa-heart"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Nouveau2">Nouveau</div>
+                        <div class="choix2 block_Restaurant">
+                            <a href="menu2.html">
+                            <div class="images">
+                                <img src="./images/stil-u2Lp8tXIcjw-unsplash.jpg" alt="restaurant2">
+                            </div>
+                            <div  class="legende_Restaurant">
+                                <div>
+                                    <h4>La note enchantée</h4>
+                                    <p>Charonne</p>
+                                </div>
+                                <div></a>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="label fa-regular fa-heart"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex_blocks">
+                        <div class="choix3 block_Restaurant">
+                            <a href="menu3.html">
+                            <div class="images">
+                                <img src="./images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="restaurant3">
+                            </div>
+                            <div class="legende_Restaurant">
+                                <div>
+                                    <h4>A la française</h4>
+                                    <p>Cité Rouge</p>
+                                </div>
+                                <div></a>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="label fa-regular fa-heart"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="choix4 block_Restaurant">
+                            <a href="menu4.html">
+                            <div class="images">
+                                <img src="./images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="restaurant4">
+                            </div>
+                            <div class="legende_Restaurant">
+                                <div>
+                                    <h4>Le délice des sens</h4>
+                                    <p>Folie-Méricourt</p>
+                                </div>
+                                <div></a>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span class="label fa-regular fa-heart"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <h4>ohmyfood</h4>
+            <div class="flex_footer">
+                <div class="duo_footer">
+                    <span class="fa-solid fa-utensils"></span>
+                    <p><a href="#">Proposer un restaurant</a></p>
+                </div>
+                <div class="duo_footer">
+                    <span class="fa-solid fa-handshake-angle"></span>
+                    <p><a href="#">Devenir partenaire</a></p>
+                </div>
+                <p><a href="#">Mentions légales</a></p>
+                <p><a href="mailto:garciamanon9@gmail.com">Contact</a></p>
+            </div>
+        </footer>
+
+    </Body>
