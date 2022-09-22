@@ -1,4 +1,3 @@
-/* -------LOADING------- */
 @font-face {
   font-family: "Shrikhand";
   src: url("../Shrikhand-Regular.ttf") format("truetype"), url("../Shrikhand-Regular.eot") format("eot"), url("../Shrikhand-Regular.woff") format("woff"), url("../Shrikhand-Regular.svg") format("svg");
@@ -134,7 +133,7 @@ header img {
   color: white;
   border-radius: 30px;
   padding: 0.5% 0;
-  width: 20%;
+  width: 18%;
   margin: auto;
   -webkit-box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
@@ -450,7 +449,7 @@ footer .fa-handshake-angle {
   margin: 1%;
 }
 #section_menu .block_choix .texte_legende {
-  max-width: 260px;
+  max-width: 275px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -461,7 +460,7 @@ footer .fa-handshake-angle {
   justify-content: space-between;
 }
 #section_menu .entrees_menu, #section_menu .plats_menu, #section_menu .desserts_menu {
-  width: 30%;
+  width: 32%;
 }
 #section_menu .bouton_validation {
   text-align: center;
@@ -519,69 +518,49 @@ footer .fa-handshake-angle {
 }
 @keyframes rotateicon {
   0% {
-    transform: rotate(-90deg);
-  }
-  25% {
-    transform: rotate(180deg);
-  }
-  75% {
     transform: rotate(90deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
 }
-#section_menu .choix_plats input[type=checkbox]:not(:indeterminate):checked ~ .icon {
+#section_menu .checkbox {
+  display: flex;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 5%;
+}
+#section_menu .checkbox:hover .icon {
   animation: moveicon 0.3s ease-in-out;
   width: 20%;
-  z-index: 1;
 }
-#section_menu .choix_plats input[type=checkbox]:not(:indeterminate):checked + .block_choix {
+#section_menu .checkbox:hover .block_choix {
   animation: movechoice 0.3s ease-in-out;
   width: 75%;
 }
-#section_menu .choix_plats input[type=checkbox]:not(:indeterminate):hover ~ .icon {
-  animation: moveicon 0.3s ease-in-out;
-  width: 20%;
-  z-index: 1;
-}
-#section_menu .choix_plats input[type=checkbox]:not(:indeterminate):hover + .block_choix {
-  animation: movechoice 0.3s ease-in-out;
-  width: 75%;
-}
-#section_menu .choix_plats input[type=checkbox]:not(:checked) ~ .icon {
+#section_menu .checkbox:not(:hover) .icon {
   animation: removeicon 0.3s ease-in-out;
-  width: 0;
+  width: 0%;
 }
-#section_menu .choix_plats input[type=checkbox]:not(:checked) ~ .block_choix {
+#section_menu .checkbox:not(:hover) .block_choix {
   animation: removechoice 0.3s ease-in-out;
   width: 100%;
 }
-#section_menu .choix_plats label {
-  display: flex;
-  margin-bottom: 5%;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0px 0px 20px 0px #d3d3d3;
+#section_menu .checkbox:hover i {
+  animation: rotateicon 0.4s ease-in-out;
 }
-#section_menu .choix_plats label input {
-  display: none;
-}
-#section_menu .choix_plats label:hover span {
-  animation: rotateicon 0.5s both;
-}
-#section_menu .choix_plats .block_choix {
+#section_menu .checkbox .block_choix {
   width: 100%;
 }
-#section_menu .choix_plats .icon {
+#section_menu .checkbox .icon {
   width: 0;
-  font-size: x-large;
+  font-size: xx-large;
   background-color: #99E2D0;
   display: flex;
   align-items: center;
   z-index: -1;
 }
-#section_menu .choix_plats .icon .fa-circle-check {
+#section_menu .checkbox .icon .fa-circle-check {
   color: white;
   font-weight: 900;
   font-size: larger;
@@ -671,7 +650,7 @@ footer .fa-handshake-angle {
   .recherche_Restaurants .texte_recherche h3 {
     margin-top: 0;
   }
-  .recherche_Restaurants .bouton_validation input {
+  .recherche_Restaurants .bouton_validation {
     background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
     border: none;
     color: white;
@@ -680,8 +659,10 @@ footer .fa-handshake-angle {
     min-width: 60%;
     -webkit-box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
+    width: 75%;
+    padding: 2% 0;
   }
-  .recherche_Restaurants .bouton_validation input:active {
+  .recherche_Restaurants .bouton_validation:active {
     background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
     opacity: 0.8;
     box-shadow: 0px 2px 12px 4px rgba(0, 0, 0, 0.4);
@@ -962,7 +943,7 @@ footer .fa-handshake-angle {
       width: 100%;
     }
     to {
-      width: 80%;
+      width: 75%;
     }
   }
   @keyframes moveicon {
@@ -981,34 +962,46 @@ footer .fa-handshake-angle {
       width: 0%;
     }
   }
-  #section_menu .choix_plats input[type=checkbox]:not(:indeterminate):checked ~ .icon {
-    animation: moveicon 0.3s ease-in-out;
-    width: 20%;
+  @keyframes removechoice {
+    from {
+      width: 75%;
+    }
+    to {
+      width: 100%;
+    }
   }
-  #section_menu .choix_plats input[type=checkbox]:not(:indeterminate):checked + .block_choix {
-    animation: movechoice 0.3s ease-in-out;
-    width: 80%;
+  @keyframes rotateicon {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  #section_menu .choix_plats input[type=checkbox]:not(:checked) ~ .icon {
-    animation: removeicon 0.2s ease-in-out;
-    width: 0;
-  }
-  #section_menu .choix_plats label {
+  #section_menu .checkbox {
     display: flex;
     margin-bottom: 5%;
     border-radius: 15px;
     overflow: hidden;
   }
-  #section_menu .choix_plats label .block_choix {
+  #section_menu .checkbox:hover .icon {
+    animation: moveicon 0.3s ease-in-out;
+    width: 20%;
+  }
+  #section_menu .checkbox:hover .block_choix {
+    animation: movechoice 0.3s ease-in-out;
+    width: 75%;
+  }
+  #section_menu .checkbox .block_choix {
     width: 100%;
   }
-  #section_menu .choix_plats label .icon {
+  #section_menu .checkbox .icon {
     width: 0;
     background-color: #99E2D0;
     display: flex;
     align-items: center;
   }
-  #section_menu .choix_plats label .icon .fa-circle-check {
+  #section_menu .checkbox .icon .fa-circle-check {
     color: white;
     font-weight: 900;
     margin: 0 auto;
@@ -1060,6 +1053,9 @@ footer .fa-handshake-angle {
   .img_restaurant1 {
     height: 200px;
   }
+  .recherche_Restaurants .bouton_validation {
+    width: 30%;
+  }
   #display {
     display: flex;
     flex-direction: column;
@@ -1107,8 +1103,11 @@ footer .fa-handshake-angle {
   #section_menu .entrees_menu, #section_menu .plats_menu, #section_menu .desserts_menu {
     width: 32%;
   }
-  #section_menu .block_choix .texte_legende {
+  #section_menu .checkbox .block_choix .texte_legende {
     max-width: 214px;
+  }
+  #section_menu .checkbox .icon .fa-circle-check {
+    font-size: smaller;
   }
   footer {
     padding: 1% 1%;
