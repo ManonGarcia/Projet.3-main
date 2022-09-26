@@ -183,7 +183,7 @@ header {
         & h3 {
             margin-left: 5%;
         }
-        & span {
+        & i {
             font-size: larger;
         }
     
@@ -293,7 +293,7 @@ header {
             & p {
                 margin-top: 0;
             }
-            & span {
+            & i {
                 font-size: x-large;
             }
     }
@@ -388,7 +388,7 @@ footer {
         white-space: nowrap;
     }
 
-    & span {
+    & i {
         font-size: small;
     }
 
@@ -423,7 +423,7 @@ footer {
         .nom_restaurant {
             @include flexCenter;
             justify-content: space-between;
-                & span {
+                & i {
                     font-size: x-large;
                 }
                 input[type=checkbox] {
@@ -842,7 +842,7 @@ footer {
             }
             & .duo_footer {
                 margin: 0 0 3% 0;
-                    & span {
+                    & i {
                         margin: 0 5% 3% 0;
                     }
             }
@@ -866,7 +866,7 @@ footer {
         height: 250px;
     }
 
-    #section_menu {
+    .section_menu {
         background-color: $color-background;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
@@ -881,7 +881,7 @@ footer {
         .nom_restaurant {
             @include flexCenter;
             justify-content: space-between;
-                & span {
+                & i {
                     font-size: x-large;
                 }
         }
@@ -1095,7 +1095,7 @@ footer {
         }
     }
 
-    #section_menu {
+    .section_menu {
         border-radius: 0;
         margin: 0;
         width: 94%;
