@@ -1010,25 +1010,6 @@ footer {
                                 }
     }                        
 
-    .choix1_entree {
-        animation: apparition-Entrees 2s .3s;
-    }
-    .choix2_entree {
-        animation: apparition-Entrees 2s .4s;
-    }
-    .choix3_entree {
-        animation: apparition-Entrees 2s .5s;
-    }
-    
-
-    @keyframes apparition-Entrees {
-        0% {
-            width: 0;
-        }
-        100% {
-            width: 100%;
-        }
-    }
 
     .footerR {
         @include footer;

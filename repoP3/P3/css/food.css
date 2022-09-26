@@ -1007,23 +1007,6 @@ footer .fa-handshake-angle {
     margin: 0 auto;
     vertical-align: middle;
   }
-  .choix1_entree {
-    animation: apparition-Entrees 2s 0.3s;
-  }
-  .choix2_entree {
-    animation: apparition-Entrees 2s 0.4s;
-  }
-  .choix3_entree {
-    animation: apparition-Entrees 2s 0.5s;
-  }
-  @keyframes apparition-Entrees {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
   .footerR {
     background-color: #2f2f2f;
     color: white;
