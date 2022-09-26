@@ -110,7 +110,7 @@ header {
         position: relative;
         box-shadow: 0px 5px 6px 0px rgb(0 0 0 / 20%);
     }
-    #logo {
+    .logo {
         display: flex;
         align-items: center;
         padding: 2%;
@@ -172,7 +172,7 @@ header {
         }
 }
 
-#display {
+.display {
     display: flex;
     justify-content: space-evenly;
 }
@@ -409,7 +409,7 @@ footer {
         object-fit: cover;
     }
 
-    #section_menu {
+    .section_menu {
         background-color: $color-background;
         border-radius: 40px;
         padding: 2% 3% 4% 3%;
@@ -624,7 +624,7 @@ footer {
     }
 
 
-    #footerR {
+    .footerR {
         @include footer;
         padding: 5% 6% 1% 6%;
     }
@@ -691,7 +691,7 @@ footer {
     }
 
 
-    #display {
+    .display {
         display: flex;
         flex-direction: column;
     }
@@ -851,7 +851,7 @@ footer {
         /*Carte Restaurants*/
 
     header {
-        #logo {
+        .logo {
             @include headerMenu;
         }
             .fa-arrow-left {
@@ -1030,7 +1030,7 @@ footer {
         }
     }
 
-    #footerR {
+    .footerR {
         @include footer;
         width: 90%;
     }
@@ -1050,7 +1050,7 @@ footer {
             width: 30%;
         }
     }
-    #display {
+    .display {
         display: flex;
         flex-direction: column;
 
@@ -1124,7 +1124,7 @@ footer {
         padding: 1% 1%;
         justify-content: space-around;
     }
-    #footerR {
+    .footerR {
         padding: 2% 5% 2% 5%;
         align-items: center;
         justify-content: space-between;

@@ -87,13 +87,13 @@ header .header_shadow {
   position: relative;
   box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
 }
-header #logo {
+header .logo {
   display: flex;
   align-items: center;
   padding: 2%;
   margin: 0;
 }
-header #logo .fa-arrow-left {
+header .logo .fa-arrow-left {
   font-size: x-large;
   color: black;
 }
@@ -149,7 +149,7 @@ header img {
   color: white;
 }
 
-#display {
+.display {
   display: flex;
   justify-content: space-evenly;
 }
@@ -376,7 +376,7 @@ footer .fa-handshake-angle {
   object-fit: cover;
 }
 
-#section_menu {
+.section_menu {
   background-color: #efefef;
   border-radius: 40px;
   padding: 2% 3% 4% 3%;
@@ -387,18 +387,18 @@ footer .fa-handshake-angle {
   margin-bottom: -3%;
   box-shadow: 0px 0px 16px 4px #dbdbdb;
 }
-#section_menu .nom_restaurant {
+.section_menu .nom_restaurant {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#section_menu .nom_restaurant span {
+.section_menu .nom_restaurant span {
   font-size: x-large;
 }
-#section_menu .nom_restaurant input[type=checkbox] {
+.section_menu .nom_restaurant input[type=checkbox] {
   display: none;
 }
-#section_menu .nom_restaurant input[type=checkbox]:checked + .label {
+.section_menu .nom_restaurant input[type=checkbox]:checked + .label {
   font-weight: 900;
   background: linear-gradient(to bottom, white 0%, #FF79DA 50%, #9356DC 100%);
   background-clip: text;
@@ -409,7 +409,7 @@ footer .fa-handshake-angle {
   animation: checkHeart 0.3s ease-in;
   font-size: x-large;
 }
-#section_menu .nom_restaurant input[type=checkbox]:hover + .label {
+.section_menu .nom_restaurant input[type=checkbox]:hover + .label {
   font-weight: 900;
   background: linear-gradient(to bottom, white 0%, #FF79DA 50%, #9356DC 100%);
   background-clip: text;
@@ -421,54 +421,54 @@ footer .fa-handshake-angle {
   font-size: x-large;
   cursor: pointer;
 }
-#section_menu .flex_repas {
+.section_menu .flex_repas {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#section_menu h3 {
+.section_menu h3 {
   margin: 0;
 }
-#section_menu hr {
+.section_menu hr {
   background-color: #99E2D0;
   border: none;
   margin: 1% 0 5% 0;
   height: 3px;
   width: 15%;
 }
-#section_menu .flex_enchante {
+.section_menu .flex_enchante {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
 }
-#section_menu .block_choix {
+.section_menu .block_choix {
   background-color: #ffffff;
   padding: 3%;
 }
-#section_menu .block_choix h4, #section_menu .block_choix p {
+.section_menu .block_choix h4, .section_menu .block_choix p {
   margin: 1%;
 }
-#section_menu .block_choix .texte_legende {
+.section_menu .block_choix .texte_legende {
   max-width: 275px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-#section_menu .block_choix .description_menu {
+.section_menu .block_choix .description_menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#section_menu .entrees_menu, #section_menu .plats_menu, #section_menu .desserts_menu {
+.section_menu .entrees_menu, .section_menu .plats_menu, .section_menu .desserts_menu {
   width: 32%;
 }
-#section_menu .bouton_validation {
+.section_menu .bouton_validation {
   text-align: center;
   width: 50%;
   margin: auto;
   margin-top: 5%;
 }
-#section_menu .bouton_validation input {
+.section_menu .bouton_validation input {
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
   border: none;
   color: white;
@@ -478,7 +478,7 @@ footer .fa-handshake-angle {
   -webkit-box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
 }
-#section_menu .bouton_validation input:hover {
+.section_menu .bouton_validation input:hover {
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
   opacity: 0.8;
   box-shadow: 0px 2px 12px 4px rgba(0, 0, 0, 0.4);
@@ -524,35 +524,35 @@ footer .fa-handshake-angle {
     transform: rotate(360deg);
   }
 }
-#section_menu .checkbox {
+.section_menu .checkbox {
   display: flex;
   overflow: hidden;
   border-radius: 20px;
   margin-bottom: 5%;
 }
-#section_menu .checkbox:hover .icon {
+.section_menu .checkbox:hover .icon {
   animation: moveicon 0.3s ease-in-out;
   width: 20%;
 }
-#section_menu .checkbox:hover .block_choix {
+.section_menu .checkbox:hover .block_choix {
   animation: movechoice 0.3s ease-in-out;
   width: 75%;
 }
-#section_menu .checkbox:not(:hover) .icon {
+.section_menu .checkbox:not(:hover) .icon {
   animation: removeicon 0.3s ease-in-out;
   width: 0%;
 }
-#section_menu .checkbox:not(:hover) .block_choix {
+.section_menu .checkbox:not(:hover) .block_choix {
   animation: removechoice 0.3s ease-in-out;
   width: 100%;
 }
-#section_menu .checkbox:hover i {
+.section_menu .checkbox:hover i {
   animation: rotateicon 0.4s ease-in-out;
 }
-#section_menu .checkbox .block_choix {
+.section_menu .checkbox .block_choix {
   width: 100%;
 }
-#section_menu .checkbox .icon {
+.section_menu .checkbox .icon {
   width: 0;
   font-size: xx-large;
   background-color: #99E2D0;
@@ -560,7 +560,7 @@ footer .fa-handshake-angle {
   align-items: center;
   z-index: -1;
 }
-#section_menu .checkbox .icon .fa-circle-check {
+.section_menu .checkbox .icon .fa-circle-check {
   color: white;
   font-weight: 900;
   font-size: larger;
@@ -588,27 +588,27 @@ footer .fa-handshake-angle {
     opacity: 1;
   }
 }
-#footerR {
+.footerR {
   background-color: #2f2f2f;
   color: white;
   padding: 1% 5%;
   padding: 5% 6% 1% 6%;
 }
-#footerR a {
+.footerR a {
   color: white;
   text-decoration: none;
 }
-#footerR .duo_footer {
+.footerR .duo_footer {
   display: flex;
   align-items: center;
 }
-#footerR span {
+.footerR span {
   font-size: small;
 }
-#footerR .fa-utensils {
+.footerR .fa-utensils {
   margin-right: 4%;
 }
-#footerR .fa-handshake-angle {
+.footerR .fa-handshake-angle {
   margin-right: 3%;
 }
 
@@ -668,7 +668,7 @@ footer .fa-handshake-angle {
     box-shadow: 0px 2px 12px 4px rgba(0, 0, 0, 0.4);
     transform: scale(1.03);
   }
-  #display {
+  .display {
     display: flex;
     flex-direction: column;
   }
@@ -849,7 +849,7 @@ footer .fa-handshake-angle {
     margin: 0 5% 3% 0;
   }
   /*Carte Restaurants*/
-  header #logo {
+  header .logo {
     display: flex;
     align-items: center;
     padding: 6%;
@@ -1024,27 +1024,27 @@ footer .fa-handshake-angle {
       width: 100%;
     }
   }
-  #footerR {
+  .footerR {
     background-color: #2f2f2f;
     color: white;
     padding: 1% 5%;
     width: 90%;
   }
-  #footerR a {
+  .footerR a {
     color: white;
     text-decoration: none;
   }
-  #footerR .duo_footer {
+  .footerR .duo_footer {
     display: flex;
     align-items: center;
   }
-  #footerR span {
+  .footerR span {
     font-size: small;
   }
-  #footerR .fa-utensils {
+  .footerR .fa-utensils {
     margin-right: 4%;
   }
-  #footerR .fa-handshake-angle {
+  .footerR .fa-handshake-angle {
     margin-right: 3%;
   }
 }
@@ -1056,43 +1056,43 @@ footer .fa-handshake-angle {
   .recherche_Restaurants .bouton_validation {
     width: 30%;
   }
-  #display {
+  .display {
     display: flex;
     flex-direction: column;
   }
-  #display #Fonctionnement {
+  .display #Fonctionnement {
     width: 100%;
     margin: 6% 0;
   }
-  #display #Fonctionnement .ensemble_etapes {
+  .display #Fonctionnement .ensemble_etapes {
     display: flex;
     width: 95%;
     margin-left: 2%;
   }
-  #display #Fonctionnement .block_Etapes {
+  .display #Fonctionnement .block_Etapes {
     margin: 4% 2% 4% 2%;
     padding: 2% 0% 2% 0;
   }
-  #display #Fonctionnement .chiffre_etape {
+  .display #Fonctionnement .chiffre_etape {
     padding: 1% 3%;
     margin-left: -4.5%;
   }
-  #display #Fonctionnement .etape_1 {
+  .display #Fonctionnement .etape_1 {
     width: 85%;
   }
-  #display #Fonctionnement .etape_2 {
+  .display #Fonctionnement .etape_2 {
     width: 82%;
   }
-  #display #Fonctionnement .etape_3 {
+  .display #Fonctionnement .etape_3 {
     width: 84%;
   }
-  #display #Choix_restaurants {
+  .display #Choix_restaurants {
     width: 94%;
     margin: 0;
     border-radius: 0;
     padding: 5% 3%;
   }
-  #display #Choix_restaurants .Nouveau1 {
+  .display #Choix_restaurants .Nouveau1 {
     right: 27em;
   }
   #section_menu {
@@ -1113,7 +1113,7 @@ footer .fa-handshake-angle {
     padding: 1% 1%;
     justify-content: space-around;
   }
-  #footerR {
+  .footerR {
     padding: 2% 5% 2% 5%;
     align-items: center;
     justify-content: space-between;
