@@ -19,7 +19,8 @@ body h2 {
   height: 100vh;
   inset: 0;
   z-index: 2;
-  animation: animation-loader 2s forwards;
+  -webkit-animation: animation-loader 2s forwards;
+          animation: animation-loader 2s forwards;
   overflow: hidden;
 }
 .loading .progress_clock {
@@ -29,8 +30,8 @@ body h2 {
   border-radius: 50%;
   border: 10px solid transparent;
   background: #99E2D0;
-  z-index: 2;
-  animation: animation-opacity 2s forwards;
+  -webkit-animation: animation-opacity 2s forwards;
+          animation: animation-opacity 2s forwards;
 }
 .loading .progress_clock:before {
   content: "";
@@ -40,9 +41,10 @@ body h2 {
   height: 45%;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAADq0lEQVR4nO3cT2gcZRzG8e9vkm1K0V4EFamixqWVHPSgKIUeehBqoQeRevFYUG8e1CaRCgsibXIpUkkhVPGm4MVDVForiHjwz9WWbpJDtREFUTS9mG12Xi8qMubfbnfyvDPv73McduBhvzC7y86uEZkwsXgIy2eAnVj4hpB9Tlj90E49eFW9rQymHlAUJue/B+4pHga+wpjlur1nZ5orgmmliDFA2OQRP0M2xUhnxlpjne1ZVZ5MPaB3dieE06w0LoeJxUPqNTerggH+NYrlH4fJ9rnQunSLeky/qhwAwMCOsdL4Nky296nH9KPqAf6xD+zLMNF+VD2kV3UJAHAbZhfDZPuAekgv6hQAYDfYXBhvP6QeslV1CwCwm8zmwsuLt6uHbEUdAwDsodF9PxwNQ+ohm6lrAMAO8sD8i+oVm6lxAAB7PZy4cp96xUZqHoBddO2UesRG6h4AsKPh1fmH1SvWk0AAjMC4esR6UggA8HQ4fuUu9Yi1pBKgwXD2rHrEWlIJAIGn1BPWkk4AeCzGT8cpBchodPerRxSlFADMHldPKEorQLC96glFaQUg3K9eUJRYAO5QDyhKLUB0X96nFmCXekBRagGiuxEttQDR8QBiHkDMA4h5ADEPIOYBxDyAmAcQ8wBiHkDMA4h5ADEPIOYBxDyAmAcQ8wBiHkAstQC5ekBRagF+Vw8oSiuA8Z16QlFaAQKfqicUpRTgT7r2rnpEUToBzE7bdHNJPaMojQDGF+zotNQz1pJCgPPssCOx/r/csHpAif7AeI2F5ox9YF31mPXUNcDX5EPP2NToD+ohm6ljgCWwIzY1+ot6yFbU7zXAmLaTzUo8+VDHAFk+p57Qi/oFGP7pmnpCL2oXwFoHV9UbelG7AFXjAcQ8gJgHEPMAYh5AzAOIeQAxDyDmAcQ8gJgHEPMAYh5AzAOIeQAxDyDmAcQ8gJgHEPMAYh5ArDoBAh+RhT107W6CfaKeMyjVCZDbC/bG3h9turnEkD2vnjMo1QlQU9W5OzpjNhxfeI6GGXl3NsK/ge5LjAGuA7f+76iFJxniGnlggyd/ucRdpYjxEnQzN9dG/4OMohgDXOj7zGDnB7hjW8QXILdzQD+/6epivDPoOWWLLoBNNS+Bne35xMBbdrJ5uYRJpYouAAAjnZeAz3o44yK/Lb9S1pwyRRnAWmMdRm4cBs6w8eVolcCb/Lp82GYfubFN8wYq+jfTYXxhDMuPYfYEcO/fh6+CXQDeruJl57/+At+BtMV6qFKbAAAAAElFTkSuQmCC) no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: contain; /*a voir*/
   transform-origin: bottom;
-  animation: progress-t59zy9 1.2s linear infinite;
+  -webkit-animation: progress-t59zy9 1.2s linear infinite;
+          animation: progress-t59zy9 1.2s linear infinite;
 }
 .loading .progress_clock:after {
   content: "";
@@ -54,7 +56,16 @@ body h2 {
   background-position: center;
   background-size: contain;
   transform-origin: bottom;
-  animation: progress-t59zy9 7.2s linear infinite;
+  -webkit-animation: progress-t59zy9 7.2s linear infinite;
+          animation: progress-t59zy9 7.2s linear infinite;
+}
+@-webkit-keyframes progress-t59zy9 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes progress-t59zy9 {
   0% {
@@ -62,6 +73,17 @@ body h2 {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes animation-loader {
+  0%, 99% {
+    opacity: 0.9;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
   }
 }
 
@@ -73,6 +95,14 @@ body h2 {
   100% {
     opacity: 0;
     z-index: -1;
+  }
+}
+@-webkit-keyframes animation-opacity {
+  0%, 90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }
 @keyframes animation-opacity {
@@ -135,7 +165,6 @@ header img {
   padding: 0.5% 0;
   width: 18%;
   margin: auto;
-  -webkit-box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
 }
 .recherche_Restaurants .bouton_validation:hover {
@@ -257,7 +286,8 @@ header img {
 #Choix_restaurants img {
   width: 100%;
   height: 150px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -281,6 +311,23 @@ header img {
   display: flex;
   justify-content: space-between;
   position: relative;
+}
+@-webkit-keyframes checkHeart {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 0% 25%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  75% {
+    background-position: 0% 75%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
 @keyframes checkHeart {
   0% {
@@ -310,7 +357,8 @@ header img {
   background-position: 0% 100%;
   background-size: 200% 200%;
   -webkit-text-fill-color: transparent;
-  animation: checkHeart 0.3s ease-in;
+  -webkit-animation: checkHeart 0.3s ease-in;
+          animation: checkHeart 0.3s ease-in;
   font-size: x-large;
 }
 #Choix_restaurants input[type=checkbox]:hover + .label {
@@ -321,7 +369,8 @@ header img {
   background-position: 0% 100%;
   background-size: 200% 200%;
   -webkit-text-fill-color: transparent;
-  animation: checkHeart 0.3s ease-in;
+  -webkit-animation: checkHeart 0.3s ease-in;
+          animation: checkHeart 0.3s ease-in;
   font-size: x-large;
   cursor: pointer;
 }
@@ -341,7 +390,8 @@ footer a {
 footer a:hover {
   font-style: italic;
   border-bottom: 2px solid transparent;
-  border-image: linear-gradient(270deg, #9356DC 0%, #FF79DA 100%);
+  -o-border-image: linear-gradient(270deg, #9356DC 0%, #FF79DA 100%);
+     border-image: linear-gradient(270deg, #9356DC 0%, #FF79DA 100%);
   border-image-slice: 1;
 }
 footer h4 {
@@ -373,7 +423,8 @@ footer .fa-handshake-angle {
 .img_restaurant1 {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .section_menu {
@@ -406,7 +457,8 @@ footer .fa-handshake-angle {
   background-position: 0% 100%;
   background-size: 200% 200%;
   -webkit-text-fill-color: transparent;
-  animation: checkHeart 0.3s ease-in;
+  -webkit-animation: checkHeart 0.3s ease-in;
+          animation: checkHeart 0.3s ease-in;
   font-size: x-large;
 }
 .section_menu .nom_restaurant input[type=checkbox]:hover + .label {
@@ -417,7 +469,8 @@ footer .fa-handshake-angle {
   background-position: 0% 100%;
   background-size: 200% 200%;
   -webkit-text-fill-color: transparent;
-  animation: checkHeart 0.3s ease-in;
+  -webkit-animation: checkHeart 0.3s ease-in;
+          animation: checkHeart 0.3s ease-in;
   font-size: x-large;
   cursor: pointer;
 }
@@ -475,7 +528,6 @@ footer .fa-handshake-angle {
   border-radius: 30px;
   padding: 5%;
   min-width: 60%;
-  -webkit-box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
 }
 .section_menu .bouton_validation input:hover {
@@ -484,12 +536,28 @@ footer .fa-handshake-angle {
   box-shadow: 0px 2px 12px 4px rgba(0, 0, 0, 0.4);
   transform: scale(1.03);
 }
+@-webkit-keyframes movechoice {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 75%;
+  }
+}
 @keyframes movechoice {
   from {
     width: 100%;
   }
   to {
     width: 75%;
+  }
+}
+@-webkit-keyframes moveicon {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 20%;
   }
 }
 @keyframes moveicon {
@@ -500,6 +568,14 @@ footer .fa-handshake-angle {
     width: 20%;
   }
 }
+@-webkit-keyframes removeicon {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 0%;
+  }
+}
 @keyframes removeicon {
   from {
     width: 20%;
@@ -508,12 +584,28 @@ footer .fa-handshake-angle {
     width: 0%;
   }
 }
+@-webkit-keyframes removechoice {
+  from {
+    width: 75%;
+  }
+  to {
+    width: 100%;
+  }
+}
 @keyframes removechoice {
   from {
     width: 75%;
   }
   to {
     width: 100%;
+  }
+}
+@-webkit-keyframes rotateicon {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 @keyframes rotateicon {
@@ -531,23 +623,28 @@ footer .fa-handshake-angle {
   margin-bottom: 5%;
 }
 .section_menu .checkbox:hover .icon {
-  animation: moveicon 0.3s ease-in-out;
+  -webkit-animation: moveicon 0.3s ease-in-out;
+          animation: moveicon 0.3s ease-in-out;
   width: 20%;
 }
 .section_menu .checkbox:hover .block_choix {
-  animation: movechoice 0.3s ease-in-out;
+  -webkit-animation: movechoice 0.3s ease-in-out;
+          animation: movechoice 0.3s ease-in-out;
   width: 75%;
 }
 .section_menu .checkbox:not(:hover) .icon {
-  animation: removeicon 0.3s ease-in-out;
+  -webkit-animation: removeicon 0.3s ease-in-out;
+          animation: removeicon 0.3s ease-in-out;
   width: 0%;
 }
 .section_menu .checkbox:not(:hover) .block_choix {
-  animation: removechoice 0.3s ease-in-out;
+  -webkit-animation: removechoice 0.3s ease-in-out;
+          animation: removechoice 0.3s ease-in-out;
   width: 100%;
 }
 .section_menu .checkbox:hover i {
-  animation: rotateicon 0.4s ease-in-out;
+  -webkit-animation: rotateicon 0.4s ease-in-out;
+          animation: rotateicon 0.4s ease-in-out;
 }
 .section_menu .checkbox .block_choix {
   width: 100%;
@@ -569,15 +666,27 @@ footer .fa-handshake-angle {
 }
 
 .choix1_plat {
-  animation: apparition 1.5s 0.1s both;
+  -webkit-animation: apparition 1.5s 0.1s both;
+          animation: apparition 1.5s 0.1s both;
 }
 
 .choix2_plat {
-  animation: apparition 1.5s 0.3s both;
+  -webkit-animation: apparition 1.5s 0.3s both;
+          animation: apparition 1.5s 0.3s both;
 }
 
 .choix3_plat {
-  animation: apparition 1.5s 0.5s both;
+  -webkit-animation: apparition 1.5s 0.5s both;
+          animation: apparition 1.5s 0.5s both;
+}
+
+@-webkit-keyframes apparition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes apparition {
@@ -657,7 +766,6 @@ footer .fa-handshake-angle {
     border-radius: 30px;
     padding: 5%;
     min-width: 60%;
-    -webkit-box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
     width: 75%;
     padding: 2% 0;
@@ -761,7 +869,8 @@ footer .fa-handshake-angle {
   #Choix_restaurants img {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
@@ -777,6 +886,23 @@ footer .fa-handshake-angle {
   }
   #Choix_restaurants .legende_Restaurant p {
     margin-top: 0;
+  }
+  @-webkit-keyframes checkHeart {
+    0% {
+      background-position: 0% 0%;
+    }
+    25% {
+      background-position: 0% 25%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    75% {
+      background-position: 0% 75%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
   }
   @keyframes checkHeart {
     0% {
@@ -806,7 +932,8 @@ footer .fa-handshake-angle {
     background-position: 0% 100%;
     background-size: 200% 200%;
     -webkit-text-fill-color: transparent;
-    animation: checkHeart 0.3s ease-in;
+    -webkit-animation: checkHeart 0.3s ease-in;
+            animation: checkHeart 0.3s ease-in;
     font-size: 20px;
   }
   footer {
@@ -933,10 +1060,17 @@ footer .fa-handshake-angle {
     border-radius: 30px;
     padding: 5%;
     min-width: 60%;
-    -webkit-box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 5px 27px -2px rgba(0, 0, 0, 0.4);
     min-width: 100%;
     padding: 12%;
+  }
+  @-webkit-keyframes movechoice {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 75%;
+    }
   }
   @keyframes movechoice {
     from {
@@ -944,6 +1078,14 @@ footer .fa-handshake-angle {
     }
     to {
       width: 75%;
+    }
+  }
+  @-webkit-keyframes moveicon {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 20%;
     }
   }
   @keyframes moveicon {
@@ -954,6 +1096,14 @@ footer .fa-handshake-angle {
       width: 20%;
     }
   }
+  @-webkit-keyframes removeicon {
+    from {
+      width: 20%;
+    }
+    to {
+      width: 0%;
+    }
+  }
   @keyframes removeicon {
     from {
       width: 20%;
@@ -962,12 +1112,28 @@ footer .fa-handshake-angle {
       width: 0%;
     }
   }
+  @-webkit-keyframes removechoice {
+    from {
+      width: 75%;
+    }
+    to {
+      width: 100%;
+    }
+  }
   @keyframes removechoice {
     from {
       width: 75%;
     }
     to {
       width: 100%;
+    }
+  }
+  @-webkit-keyframes rotateicon {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
   @keyframes rotateicon {
@@ -985,11 +1151,13 @@ footer .fa-handshake-angle {
     overflow: hidden;
   }
   .section_menu .checkbox:hover .icon {
-    animation: moveicon 0.3s ease-in-out;
+    -webkit-animation: moveicon 0.3s ease-in-out;
+            animation: moveicon 0.3s ease-in-out;
     width: 20%;
   }
   .section_menu .checkbox:hover .block_choix {
-    animation: movechoice 0.3s ease-in-out;
+    -webkit-animation: movechoice 0.3s ease-in-out;
+            animation: movechoice 0.3s ease-in-out;
     width: 75%;
   }
   .section_menu .checkbox .block_choix {
@@ -1101,6 +1269,4 @@ footer .fa-handshake-angle {
     align-items: center;
     justify-content: space-between;
   }
-}
-
-/*# sourceMappingURL=food.css.map */
+}/*# sourceMappingURL=main.css.map */

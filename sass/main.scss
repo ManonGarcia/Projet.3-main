@@ -40,7 +40,6 @@ body {
         border-radius: 50%;
         border: 10px solid transparent;
         background: $color-tertiary;
-        z-index: 2;
         animation: animation-opacity 2s forwards;
      }
      
@@ -52,7 +51,7 @@ body {
         height: 45%;
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAADq0lEQVR4nO3cT2gcZRzG8e9vkm1K0V4EFamixqWVHPSgKIUeehBqoQeRevFYUG8e1CaRCgsibXIpUkkhVPGm4MVDVForiHjwz9WWbpJDtREFUTS9mG12Xi8qMubfbnfyvDPv73McduBhvzC7y86uEZkwsXgIy2eAnVj4hpB9Tlj90E49eFW9rQymHlAUJue/B+4pHga+wpjlur1nZ5orgmmliDFA2OQRP0M2xUhnxlpjne1ZVZ5MPaB3dieE06w0LoeJxUPqNTerggH+NYrlH4fJ9rnQunSLeky/qhwAwMCOsdL4Nky296nH9KPqAf6xD+zLMNF+VD2kV3UJAHAbZhfDZPuAekgv6hQAYDfYXBhvP6QeslV1CwCwm8zmwsuLt6uHbEUdAwDsodF9PxwNQ+ohm6lrAMAO8sD8i+oVm6lxAAB7PZy4cp96xUZqHoBddO2UesRG6h4AsKPh1fmH1SvWk0AAjMC4esR6UggA8HQ4fuUu9Yi1pBKgwXD2rHrEWlIJAIGn1BPWkk4AeCzGT8cpBchodPerRxSlFADMHldPKEorQLC96glFaQUg3K9eUJRYAO5QDyhKLUB0X96nFmCXekBRagGiuxEttQDR8QBiHkDMA4h5ADEPIOYBxDyAmAcQ8wBiHkDMA4h5ADEPIOYBxDyAmAcQ8wBiHkAstQC5ekBRagF+Vw8oSiuA8Z16QlFaAQKfqicUpRTgT7r2rnpEUToBzE7bdHNJPaMojQDGF+zotNQz1pJCgPPssCOx/r/csHpAif7AeI2F5ox9YF31mPXUNcDX5EPP2NToD+ohm6ljgCWwIzY1+ot6yFbU7zXAmLaTzUo8+VDHAFk+p57Qi/oFGP7pmnpCL2oXwFoHV9UbelG7AFXjAcQ8gJgHEPMAYh5AzAOIeQAxDyDmAcQ8gJgHEPMAYh5AzAOIeQAxDyDmAcQ8gJgHEPMAYh5ArDoBAh+RhT107W6CfaKeMyjVCZDbC/bG3h9turnEkD2vnjMo1QlQU9W5OzpjNhxfeI6GGXl3NsK/ge5LjAGuA7f+76iFJxniGnlggyd/ucRdpYjxEnQzN9dG/4OMohgDXOj7zGDnB7hjW8QXILdzQD+/6epivDPoOWWLLoBNNS+Bne35xMBbdrJ5uYRJpYouAAAjnZeAz3o44yK/Lb9S1pwyRRnAWmMdRm4cBs6w8eVolcCb/Lp82GYfubFN8wYq+jfTYXxhDMuPYfYEcO/fh6+CXQDeruJl57/+At+BtMV6qFKbAAAAAElFTkSuQmCC) no-repeat;
         background-position: center;
-        background-size: contain;
+        background-size: contain;           /*a voir*/
         transform-origin: bottom;
         animation: progress-t59zy9 1.2s linear infinite;
      }
@@ -99,7 +98,6 @@ body {
     }
     100% {
         transform: scale(0);
-
     }
 }
 
@@ -247,7 +245,6 @@ header {
             padding: 1%;
             width: 8%;
             position: absolute;
-            content: '';
             z-index: 1;
             right: 28.2em;
             top: 1em;
@@ -259,7 +256,6 @@ header {
             padding: 1%;
             width: 8%;
             position: absolute;
-            content: '';
             z-index: 1;
             right: 1em;
             top: 1em;
