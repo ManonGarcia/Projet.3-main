@@ -215,25 +215,13 @@ header img {
   margin: 5% 0;
   border-radius: 25px;
 }
-#Choix_restaurants .Nouveau1 {
+#Choix_restaurants .Nouveau {
   background-color: #99E2D0;
-  padding: 1%;
-  width: 8%;
+  padding: 1.5%;
   position: absolute;
   z-index: 1;
-  right: 28.2em;
-  top: 1em;
-  text-align: center;
-  color: #278870;
-}
-#Choix_restaurants .Nouveau2 {
-  background-color: #99E2D0;
-  padding: 1%;
-  width: 8%;
-  position: absolute;
-  z-index: 1;
-  right: 1em;
-  top: 1em;
+  right: 1.5em;
+  top: 1.5em;
   text-align: center;
   color: #278870;
 }
@@ -243,6 +231,7 @@ header img {
   margin-bottom: 5%;
   width: 48%;
   box-shadow: 1px 0px 10px 4px #aeaeae;
+  position: relative;
 }
 #Choix_restaurants .block_Restaurant a {
   text-decoration: none;
@@ -721,26 +710,6 @@ footer .fa-handshake-angle {
     border-radius: 0;
     margin: 0;
   }
-  #Choix_restaurants .Nouveau1 {
-    background-color: #99E2D0;
-    padding: 2%;
-    width: 18%;
-    position: absolute;
-    text-align: center;
-    color: #278870;
-    top: 1em;
-    right: 1em;
-  }
-  #Choix_restaurants .Nouveau2 {
-    background-color: #99E2D0;
-    padding: 2%;
-    width: 18%;
-    position: absolute;
-    text-align: center;
-    color: #278870;
-    top: 15.5em;
-    right: 1em;
-  }
   #Choix_restaurants .block_Restaurant {
     background-color: #ffffff;
     border-radius: 20px;
@@ -1046,12 +1015,11 @@ footer .fa-handshake-angle {
   }
   .display #Fonctionnement .ensemble_etapes {
     display: flex;
-    width: 95%;
-    margin-left: 2%;
   }
   .display #Fonctionnement .block_Etapes {
     margin: 4% 2% 4% 2%;
     padding: 2% 0% 2% 0;
+    white-space: nowrap;
   }
   .display #Fonctionnement .chiffre_etape {
     padding: 1% 3%;
@@ -1071,9 +1039,6 @@ footer .fa-handshake-angle {
     margin: 0;
     border-radius: 0;
     padding: 5% 3%;
-  }
-  .display #Choix_restaurants .Nouveau1 {
-    right: 27em;
   }
   .section_menu {
     border-radius: 0;

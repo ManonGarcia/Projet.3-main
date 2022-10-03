@@ -240,33 +240,22 @@ header {
     margin: 5% 0;
     border-radius: 25px;
 
-        .Nouveau1 {
+        .Nouveau {
             background-color: $color-tertiary;
-            padding: 1%;
-            width: 8%;
+            padding: 1.5%;
             position: absolute;
             z-index: 1;
-            right: 28.2em;
-            top: 1em;
+            right: 1.5em;
+            top: 1.5em;
             text-align: center;
             color: darken($color: $color-tertiary, $amount: 40%);  
-        }
-        .Nouveau2 {
-            background-color: $color-tertiary;
-            padding: 1%;
-            width: 8%;
-            position: absolute;
-            z-index: 1;
-            right: 1em;
-            top: 1em;
-            text-align: center;
-            color: darken($color: $color-tertiary, $amount: 40%);
         }
 
     .block_Restaurant {
         @include blockRestaurants;
         width: 48%;
         box-shadow: 1px 0px 10px 4px #aeaeae;
+        position: relative;
             & a {
                 text-decoration: none;
                 color: black;
@@ -746,16 +735,7 @@ footer {
         border-radius: 0;
         margin: 0;
 
-        .Nouveau1 {
-            @include nouveau1;
-            top: 1em;
-            right: 1em;
-        }
-            .Nouveau2 {
-                @include nouveau2;
-                top: 15.5em;
-                right: 1em;
-            }
+
             .block_Restaurant {
                 @include blockRestaurants;
                 width: 100%;
@@ -1037,13 +1017,12 @@ footer {
     
             .ensemble_etapes {
                 display: flex;
-                width: 95%;
-                margin-left: 2%;
             }
 
         .block_Etapes {
             margin: 4% 2% 4% 2%;
             padding: 2% 0% 2% 0;
+            white-space: nowrap;
         }
             .chiffre_etape {
                 padding: 1% 3%;
@@ -1065,10 +1044,6 @@ footer {
             margin: 0;
             border-radius: 0;
             padding: 5% 3%;
-            
-                .Nouveau1 {
-                    right: 27em;
-                }
         }
     }
 
