@@ -217,13 +217,15 @@ header img {
 }
 #Choix_restaurants .Nouveau {
   background-color: #99E2D0;
-  padding: 1.5%;
+  padding: 2% 3%;
   position: absolute;
   z-index: 1;
-  right: 1.5em;
-  top: 1.5em;
+  right: 1.3em;
+  top: 1.3em;
   text-align: center;
   color: #278870;
+  font-size: small;
+  font-weight: bold;
 }
 #Choix_restaurants .block_Restaurant {
   background-color: #ffffff;

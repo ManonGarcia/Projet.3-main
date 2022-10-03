@@ -242,13 +242,15 @@ header {
 
         .Nouveau {
             background-color: $color-tertiary;
-            padding: 1.5%;
+            padding: 2% 3%;
             position: absolute;
             z-index: 1;
-            right: 1.5em;
-            top: 1.5em;
+            right: 1.3em;
+            top: 1.3em;
             text-align: center;
             color: darken($color: $color-tertiary, $amount: 40%);  
+            font-size: small;
+            font-weight: bold;
         }
 
     .block_Restaurant {
